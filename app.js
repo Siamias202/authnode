@@ -8,6 +8,7 @@ import dbconnect from './config/dbconnect.js'
 
 import userRoutes from './routes/userRoutes.js'
 import bookRoutes from './routes/bookRoutes.js'
+import todoRoutes from './routes/todoRoutes.js'
 import cors from 'cors'
 
 const app=express()
@@ -23,6 +24,7 @@ dbconnect(DATABASE_URL)
 app.use(express.json())
 app.use("/api/user",userRoutes)
 app.use("/api/book",bookRoutes)
+app.use("/api/todo",todoRoutes)
 
 app.listen(port,()=>{
     console.log(`server listening at http://localhost:${port}`)
